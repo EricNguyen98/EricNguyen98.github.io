@@ -123,7 +123,7 @@ article, section {
 aside {
   display: flex;
   flex-flow: row wrap;
-  flex: 3;
+  flex: 2;
 }
 
 aside a {

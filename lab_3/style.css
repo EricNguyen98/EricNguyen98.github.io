@@ -14,7 +14,7 @@ body {
   width: 70%;
   min-width: 800px;
   margin: 0 auto;
-  background-color: #a9a9a9;
+  background-color: #6091C3;
 }
 
 /* || typography */
@@ -65,7 +65,7 @@ body > * {
 }
 
 main, header, nav, article, aside, footer, section {
-  background-color: #6091C3;
+  background-color: #a9a9a9;
   padding: 1%;
 }
 

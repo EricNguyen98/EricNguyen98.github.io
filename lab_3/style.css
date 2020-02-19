@@ -7,19 +7,20 @@ html, body {
 
 html {
   font-size: 10px;
-  background-color: #a9a9a9;
+
 }
 
 body {
   width: 70%;
   min-width: 800px;
   margin: 0 auto;
+  background-color: #a9a9a9;
 }
 
 /* || typography */
 
 h1, h2, h3 {
-  font-family: 'Odibee Sans', cursive;
+  font-family: 'Comfortaa', cursive;
   color: #2a2a2a;
 }
 
@@ -120,19 +121,19 @@ article, section {
 }
 
 aside {
-  flex: 1;
-  margin-left: 10px;
-  padding: 1%;
+  display: flex;
+  flex-flow: row wrap;
+  flex: 3;
 }
 
 aside a {
-  display: block;
-  float: left;
-  width: 50%;
+  display: flex;
+  flex-basis: 50%;
 }
 
 aside img {
-  max-width: 100%;
+  width: 100%;
+  height: auto;
 }
 
 footer {

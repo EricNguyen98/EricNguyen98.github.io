@@ -1,0 +1,62 @@
+/* Setup*/
+html, body {
+    margin: 0;
+    padding: 0;
+}
+  
+html {
+    font-size: 10px;
+  
+}
+/*typography*/
+.name{
+    font-size: 4rem;
+    color:#ffffff
+}
+
+
+/* Header*/
+.header{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #b3b3b3;
+    margin-bottom: 15px;
+    flex: 1 100%;
+
+  }
+
+.name{
+    align-self: flex-start;
+    margin-left: 20px;
+
+}
+.umdlogo{
+    align-self: flex-end;
+    width: 20%;
+    margin-bottom: 15px;
+    margin-right: 20px;
+    margin-top: 15px;
+}
+/*main content*/
+.image{
+    max-width: 33%; 
+}
+.caption{
+    max-width: 33%;
+}
+.roles{
+    min-width: 66%;
+}
+/*main layout*/
+.wrapper{
+    display:flex;
+    justify-content:center;
+    flex: 1 100%;
+}
+.content{
+    display:flex;
+    max-width:960px;
+    flex-flow: row wrap;
+}

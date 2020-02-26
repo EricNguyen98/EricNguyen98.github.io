@@ -76,10 +76,12 @@ body{
 }
 .caption{
     background-color: #ffffff;
+    padding: 5px;
 }
 .roles{
     min-width: 66%;
     background-color: #ffffff;
+    padding: 1px;
 }
 /*main layout*/
 .wrapper{

@@ -8,46 +8,77 @@ html {
     font-size: 10px;
   
 }
+
+body{
+    background-color: #b3b3b3;
+}
 /*typography*/
 .name{
+    font-family: 'Staatliches';
     font-size: 4rem;
     color:#ffffff
 }
 
+.caption{
+    font-family: 'Source Sans Pro';
+    font-size: medium;
+}
+
+.roles{
+    font-family: 'Source Sans Pro';
+    font-size: small;
+
+}
+.jobtitle{
+    font-size: large;
+}
+.sectiontitle{
+    font-size: xx-large;
+    font-weight: 900;
+}
 
 /* Header*/
 .header{
     display: flex;
     flex-flow: row wrap;
-    align-items: center;
     justify-content: space-between;
-    background-color: #b3b3b3;
+    background-color: #bb0a30;
     margin-bottom: 15px;
     flex: 1 100%;
-
+    align-items: center;
   }
 
 .name{
-    align-self: flex-start;
     margin-left: 20px;
 
 }
 .umdlogo{
-    align-self: flex-end;
-    width: 20%;
-    margin-bottom: 15px;
+    min-width: 200px;
+    min-height: 67px;
+    max-width: 30%;
+    max-height: 99px;
     margin-right: 20px;
-    margin-top: 15px;
 }
 /*main content*/
+.profile{
+    display: flex;
+    max-width: 33%;
+    min-width: 200px; 
+    flex-flow: column wrap;
+    margin-right: 7px;
+}
 .image{
-    max-width: 33%; 
+   max-width: 100%; 
+   height: auto;
+   border: 1px solid black;
+   border-radius: 4px;
 }
 .caption{
-    max-width: 33%;
+    background-color: #ffffff;
 }
 .roles{
     min-width: 66%;
+    background-color: #ffffff;
 }
 /*main layout*/
 .wrapper{
@@ -59,4 +90,26 @@ html {
     display:flex;
     max-width:960px;
     flex-flow: row wrap;
+    justify-content:center;
 }
+
+/*breakpoint*/
+@media only screen and (max-width: 1000px) {
+    .wrapper{
+        justify-content:center;
+    }
+    .profile{
+        display: flex;
+        max-width: 66%;
+        flex-flow: row;
+        justify-content: space-evenly;
+        margin-bottom: 10px;
+    }
+    .image{
+        width: 45%;
+    }
+    .caption{
+        margin-left: 10px;
+        align-self: center;
+    }
+  }

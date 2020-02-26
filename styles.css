@@ -14,7 +14,7 @@ body{
 }
 /*typography*/
 .name{
-    font-family: 'Staatliches';
+    font-family: 'Bebas Neue';
     font-size: 4rem;
     color:#ffffff
 }
@@ -110,6 +110,7 @@ body{
     }
     .image{
         width: 45%;
+        height: auto;
     }
     .caption{
         margin-left: 10px;

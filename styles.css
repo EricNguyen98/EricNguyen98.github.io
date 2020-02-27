@@ -46,8 +46,9 @@
   }
 
 .name{
-    margin-left: 20px;
     font-size: 40px;
+    font-weight: 900;
+    margin-left: 20px;
 
 }
 .umdlogo{

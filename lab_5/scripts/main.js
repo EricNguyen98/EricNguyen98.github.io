@@ -1,32 +1,33 @@
-let doc = document.querySelector('body');
+let el = document.querySelector('button');
 
-doc.onclick = function() {
-const myTitle = document.querySelector('.header');
-myTitle.textContent = "Eric Nguyen's List Of Countries";
+el.addEventListener('click',function(){makeList()});
 
-const content = document.querySelector('.content');
+function makeList() {
+    const myTitle = document.querySelector('.header');
+    myTitle.textContent = "Eric Nguyen's List Of Countries";
 
-content.removeChild(content.lastElementChild)
-const  country= document.createElement("ol");
-country.classList.add('countries');
+    const content = document.querySelector('.content');
 
-let contList = [];
+    content.removeChild(content.lastElementChild)
+    const  country= document.createElement("ol");
+    country.classList.add('countries');
 
-let a =getInt();
-a.sort(sortNum);
-a.forEach(element => {
-    contList.push(countries[element]);
-});
-contList.forEach(element => console.log(element));
-contList.forEach(element => {
-    let line = document.createElement('li');
-    let name = element['name'];
-    let code = element['code'].bold();
-    line.innerHTML= code  + ' ' + name;
-    country.appendChild(line)
-    
-});
-content.appendChild(country);
+    let contList = [];
+
+    let a =getInt();
+    a=a.sort(sortNum);
+    a.forEach(element => {
+        contList.push(countries[element]);
+    });
+    contList.forEach(element => {
+        let line = document.createElement('li');
+        let name = element['name'];
+        let code = element['code'].bold();
+        line.innerHTML= code  + ' ' + name;
+        country.appendChild(line)
+        
+    });
+    content.appendChild(country);
 }
 
 

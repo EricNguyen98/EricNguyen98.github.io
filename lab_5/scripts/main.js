@@ -30,7 +30,9 @@ function makeList() {
     content.appendChild(country);
     for(i=0;i<countries.length;i++){
         if (!a.includes(i)){
-            console.log(countries[i]);
+            let name2 =countries[i]['name'];
+            let code2 =countries[i]['code'];
+            console.log(code2+ ' ' + name2);
         }
     }
 }

@@ -28,6 +28,11 @@ function makeList() {
         
     });
     content.appendChild(country);
+    for(i=0;i<countries.length;i++){
+        if (!a.includes(i)){
+            console.log(countries[i]);
+        }
+    }
 }
 
 

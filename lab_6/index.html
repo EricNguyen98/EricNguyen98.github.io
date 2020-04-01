@@ -11,10 +11,15 @@
           <h1>HTML 1 Forms Lab</h1>
         </div>
         <div>
+          <!-- This sends the form as a json to the lab server through a post. -->
           <form action="https://nameless-thicket-21836.herokuapp.com/lab" method="post">
+            <!-- This gives the label to the first text box -->
             <label for="name">Name</label>
+            <!-- This defines the input box for the name, and limits the characters to 140-->
             <input type="text" id="name" maxlength="140" />
+            <!-- This defines the label for interests-->
             <label for="interests">Interests</label>
+            <!-- This defines the next input box for interests, this defines the height and width with row and cols. Placeholder, defines the text in the box and automatically disappears -->
             <textarea id="interests" name="interests"
                 rows="5" cols="33" placeholder= " Enter interests"></textarea><br />
             <button class="button" type="submit">Submit</button>

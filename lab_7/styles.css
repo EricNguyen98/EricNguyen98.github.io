@@ -103,6 +103,10 @@ h3 {
 }
 
 /* Leaflet*/
+#mapid{
+  height: 480px;
+  width: 640px;
+}
 .leaflet-popup-content-wrapper .leaflet-popup-content {
   font-size: 1.3em;
   color: Blue;

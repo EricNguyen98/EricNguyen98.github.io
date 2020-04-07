@@ -60,12 +60,10 @@
 
           let sorted = sortData(groupedData,dataKeys);
           //calls the sorting function to key the number of establishments in each category as an object
-          console.log(sorted);
           return sorted;
         })
         //sdata is sorted data form least to greatest
         .then((sdata)=>{
-          console.log(sdata);
           let points =[]
           function generateDataPoints(){
             for(let i = 0; i < sdata.length;i++){
@@ -78,7 +76,7 @@
           //generate datapoints
           generateDataPoints();
           //https://canvasjs.com/javascript-charts/bar-chart-axis-scale-break/
-          var chart = new CanvasJS.Chart("chartContainer", {
+          let chart = new CanvasJS.Chart("chartContainer", {
             animationEnabled: true,
             title: {
               text: "Let's Find Somewhere To Eat"

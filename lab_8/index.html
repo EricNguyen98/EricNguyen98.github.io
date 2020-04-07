@@ -19,7 +19,7 @@
       fetch('https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json') // replace this with the food safety data set
         .then((data) => data.json()) // this is an "implicit return" - we're returning the results of the Fetch request to the next step.
         .then((data) => { // this is an explicit return. If I want my information to go further, I'll need to use the "return" keyword before the brackets close
-          console.log(data);
+          console.log(data.length);
           return data; // <- this will pass the data to the next "then" statement when I'm ready.
         })
         .then((data)=>{
@@ -40,6 +40,8 @@
               //return the accumulator ie. now grouped establishments
             }, {})
           }
+
+
           function sortData(grouped, keys){
             let keyLen =[]
             keys.forEach(function(y){
@@ -51,6 +53,8 @@
               });
             return keyLen;
           }
+
+
           //sorts data from greatest to least and returns new object
           let groupedData = groupBy(data,'category');
           //defines new array of grouped establishments
@@ -65,6 +69,8 @@
         //sdata is sorted data form least to greatest
         .then((sdata)=>{
           let points =[]
+
+
           function generateDataPoints(){
             for(let i = 0; i < sdata.length;i++){
               points.push({
@@ -73,6 +79,8 @@
               });
             }
           };
+
+          
           //generate datapoints
           generateDataPoints();
           //https://canvasjs.com/javascript-charts/bar-chart-axis-scale-break/

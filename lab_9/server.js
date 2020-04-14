@@ -28,7 +28,6 @@ function processDataForFrontEnd(req, res) {
   fetch(baseURL)
     .then((r) => r.json())
     .then((data) => {
-      console.log(data);
       function groupBy(objectArray, category) {
         // params
         return objectArray.reduce((acc, obj) => {
@@ -67,6 +66,7 @@ function processDataForFrontEnd(req, res) {
           label: sorted[i][0]
         });
       }
+      console.log(points);
       res.send({ points: points });
       // here's where we return data to the front end
     })

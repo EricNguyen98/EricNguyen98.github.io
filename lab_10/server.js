@@ -55,16 +55,28 @@ function returnData(res) {
   const base = 'SELECT * FROM responses';
   db.all(base, [], (err, rows) => {
     if (err) { throw err; }
-    rows.forEach((row) => {
-      console.log(row);
-    });
-  });
+    const data = ({ 'records': [] });
+    console.log(rows[0].name);
+    console.log(rows[1]);
+    for (let i = 0; i < rows.length; i++) {
+      const row = rows[i];
+      data.records.push({
+        'name': row.name,
+        'zip': row.zipcode,
+        'interest': row.interests
+      });
+    }
+    res.json(data);
+  }
+  );
 }
 // Syntax change - we don't want to repeat ourselves,
 // or we'll end up with spelling errors in our endpoints.
 //
 app.route('/api')
-  .get((req, res) => res.json({ test: 'hi' }))
+  .get((req, res) => {
+    returnData(res);
+  })
   .post((req, res) => {
     console.log('/api post request', req.body);
     res.send('your request was successful'); // simple mode
@@ -72,7 +84,6 @@ app.route('/api')
   .put((req, res) => {
     console.log(req.body);
     insertData(req, res);
-    returnData(res);
   });
 
 

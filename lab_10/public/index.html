@@ -23,6 +23,7 @@
             ><br />
             <button id="formBtn">Submit</button>
           </form>
+          <button id="getBtn">Retrieve Records</button>
         </div>
       </div>
     </div>
@@ -48,7 +49,7 @@
           body: JSON.stringify(Object.fromEntries(formToSend))
           // send data to backend pass object and turn into JSON
         })
-          .then((data) => data.json()) // JSON parsing
+          .then((data) => data.json()) // turn response object into JSON
           .then((data) => {
             console.log(data);
             // btn.setAttribute('disabled', true);
@@ -57,9 +58,37 @@
             target.append(`${data.message}`);
           });
       }
+      function getRecords (x) {
+        const btn = document.querySelector('#getBtn');
+        const container = document.querySelector('.container');
+        x.preventDefault();// no reload
+        fetch('/api', {
+          method: 'GET'
+        })
+          .then((data) => data.json())
+          .then((data) =>{
+            console.log(data);
+            // btn.setAttribute('disabled',true)
 
+            // adds list
+            const display = document.createElement('ol');
+            container.appendChild(display);
+      
+            // add records as list
+            for (let i = 0; i < 5; i++) {
+              const records = document.createElement('li');
+              records.textContent = 'ugh';
+              container.appendChild(records);
+            }
+
+
+          });
+      }
       const formBtn = document.querySelector('#formBtn');
       formBtn.addEventListener('click', sendForm);
+
+      const getBtn = document.querySelector('#getBtn');
+      getBtn.addEventListener('click', getRecords);
     </script>
   </body>
 </html>

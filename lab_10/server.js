@@ -64,7 +64,7 @@ function returnData(res) {
 // or we'll end up with spelling errors in our endpoints.
 //
 app.route('/api')
-  .get((req, res) => { processDataForFrontEnd(req, res)})
+  .get((req, res) => res.json({ test: 'hi' }))
   .post((req, res) => {
     console.log('/api post request', req.body);
     res.send('your request was successful'); // simple mode

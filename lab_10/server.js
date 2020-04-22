@@ -41,23 +41,29 @@ function processDataForFrontEnd(req, res) {
 
 function insertData(req, res) {
   const input = req.body;
+  // pull the values of the response into varibles
   const { name, zip_code, interests } = input;
+  // insert variables into database
   db.run('INSERT INTO responses (name, zipcode, interests) VALUES ("' + name + '","' + zip_code + '","' + interests +'")',
     (err) => {
       if (err) {
         console.log(err.message);
       }
+      // response message if error is not thrown
       res.json({ message: 'Your submission has been recorded', form: req.body});
     });
 }
 
 function returnData(res) {
+  // retrieves records
   const base = 'SELECT * FROM responses';
+  // starts processing chanine
   db.all(base, [], (err, rows) => {
     if (err) { throw err; }
+    // throws error if it exists
+    // creates the response package
     const data = ({ 'records': [] });
-    console.log(rows[0].name);
-    console.log(rows[1]);
+    // adds responses to package
     for (let i = 0; i < rows.length; i++) {
       const row = rows[i];
       data.records.push({
@@ -75,6 +81,7 @@ function returnData(res) {
 //
 app.route('/api')
   .get((req, res) => {
+    // retrieves data and sends it back in package
     returnData(res);
   })
   .post((req, res) => {
@@ -82,7 +89,9 @@ app.route('/api')
     res.send('your request was successful'); // simple mode
   })
   .put((req, res) => {
+    // displays the received form
     console.log(req.body);
+    // inserts data into database and sends back response
     insertData(req, res);
   });
 

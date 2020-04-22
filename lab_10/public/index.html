@@ -15,11 +15,9 @@
             <label for="name">Name</label>
             <input type="text" id="name" name="name" />
             <label for="zip_code">Zip Code</label>
-            <input type="text" id="zip_code" name="zip_code" />
+            <input type="text" id="zip_code" name="zip_code" maxlength="5"/>
             <label for="interests">Interests</label>
-            <textarea id="interests" name="interests" rows="5" cols="33">
-                Default text says what?
-            </textarea
+            <textarea id="interests" name="interests" rows="5" cols="33" placeholder="Type Interests"></textarea
             ><br />
             <button id="formBtn">Submit</button>
           </form>
@@ -52,7 +50,7 @@
           .then((data) => data.json()) // turn response object into JSON
           .then((data) => {
             console.log(data);
-            // btn.setAttribute('disabled', true);
+            btn.setAttribute('disabled', true);
             const br = document.createElement('br');
             target.append(br);
             target.append(`${data.message}`);
@@ -69,7 +67,6 @@
           .then((data) => {
             const recnum = Object.keys(data.records).length;
             console.log(recnum);
-            console.log(data.records[1]);
             btn.setAttribute('disabled', true);
 
             // adds list
@@ -78,12 +75,14 @@
       
             // add records as list
             for (let i = 0; i < recnum; i++) {
+              // create the access variables
               const record = document.createElement('ol');
               record.setAttribute('type', 'I');
               const name = document.createElement('li');
               const zip = document.createElement('li');
               const interest = document.createElement('li');
-              record.textContent = `Record #:${i + 1}`;
+              // add the variables to the list
+              record.textContent = `Record #: ${i + 1}`;
               container.appendChild(record);
               name.textContent = `Name: ${data.records[i].name}`;
               record.appendChild(name);

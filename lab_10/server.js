@@ -47,7 +47,7 @@ function insertData(req, res) {
       if (err) {
         console.log(err.message);
       }
-      res.json('hello');
+      res.json({ message: 'Your submission has been recorded', form: req.body});
     });
 }
 

@@ -30,24 +30,31 @@
       function sendForm(e) {
         e.preventDefault(); // this prevents your page reloading on button click
         const target = document.querySelector('#labForm');
+        // information we want to send
         const btn = document.querySelector('#formBtn');
 
         const formToSend = new FormData(target);
+        // data structure definition
 
+        // fetch request with inital GET
         fetch('/api', {
           method: 'PUT',
+          // mail type
           headers: {
+            // information about info
             'Content-Type': 'application/json'
           },
+          // body of request
           body: JSON.stringify(Object.fromEntries(formToSend))
+          // send data to backend pass object and turn into JSON
         })
-          .then((data) => data.text()) // note: we didn't send JSON, so there's no JSON to get.
+          .then((data) => data.json()) // JSON parsing
           .then((data) => {
             console.log(data);
-            //btn.setAttribute('disabled', true);
+            // btn.setAttribute('disabled', true);
             const br = document.createElement('br');
             target.append(br);
-            target.append(`${data}`);
+            target.append(`${data.message}`);
           });
       }
 
